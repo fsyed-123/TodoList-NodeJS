@@ -4,8 +4,8 @@ const app = express()
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
-// Get values from HTML Objects
-app.use(bodyParser.urlencoded({extended: false}))
+// Decode JSON
+app.use(bodyParser.json())
 
 // Logging
 app.use(morgan('short'))

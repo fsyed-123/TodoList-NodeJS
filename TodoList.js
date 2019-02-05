@@ -55,10 +55,12 @@ router.get("/todolist/:id", (req, res) => {
 
 // POST a To Do List Item
 router.post('/todolist_create', (req, res) => {
-    console.log("Trying to create a new user...")
-  
+
     // Get title, description, and completion
-    const title = req.body.title 
+    console.log("Here's the title: " + req.body.title)
+    console.log("Here's the description: " + req.body.description)
+
+    const title = req.body.title
     const description = req.body.description
     const completed = 0
   
