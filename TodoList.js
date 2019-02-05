@@ -64,7 +64,7 @@ router.post('/todolist_create', (req, res) => {
   
     // SQL Query to insert objects
     const queryString = "INSERT INTO ToDoListItems (title, description, completed) VALUES (?, ?, ?)"
-    getConnection().query(queryString, [firstName, lastName], (err, results, fields) => {
+    getConnection().query(queryString, [title, description, completed], (err, results, fields) => {
   
       // Check for errors
       if (err) {
