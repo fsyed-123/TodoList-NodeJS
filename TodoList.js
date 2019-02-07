@@ -53,6 +53,24 @@ router.get("/todolist/:id", (req, res) => {
     })
 })
 
+// Delete User by ID
+router.delete("todolist/:id", (req, res) => {
+    const todolistId = req.params.id
+    const queryString = "DELETE FROM ToDoListItems WHERE id = ?"
+    getConnection().query(queryString, [todolistId], (err, rows, field) => {
+  
+      // Check for errors
+      if (err) {
+        console.log("Failed to delete todolist items: " + err)
+        res.sendStatus(500)
+        return
+      }
+      console.log("Deleted item with id: ", req.id)
+      res.end()
+    })
+    res.end()
+})
+
 // POST a To Do List Item
 router.post('/todolist_create', (req, res) => {
 
